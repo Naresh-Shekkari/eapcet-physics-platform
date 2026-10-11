@@ -30,8 +30,8 @@ export function ChapterPage() {
     if (examAvailable) navigate('/quiz?mode=exam');
   };
 
-  // Relative PDF URL — works on GitHub Pages
-  const pdfUrl = './work-energy-power-mcq-practice.pdf';
+  // Base URL-aware PDF path — works locally and on GitHub Pages
+  const pdfUrl = `${import.meta.env.BASE_URL}work-energy-power-mcq-practice.pdf`;
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 space-y-8">
