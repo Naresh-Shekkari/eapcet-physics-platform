@@ -72,7 +72,13 @@ npm run build
 ```
 eapcet-physics-platform/
 ├── public/
-│   └── work-energy-power-mcq-practice.pdf   ← Source question bank PDF
+│   ├── mcqs/                                ← Dedicated folder for MCQ practice PDFs ONLY
+│   │   ├── README.md
+│   │   └── work-energy-power-mcq-practice.pdf
+│   └── courses/                             ← Dedicated folder for Complete Course Materials & Theory
+│       ├── README.md
+│       └── work-energy-power/
+│           └── work-energy-power-complete-guide.md
 ├── src/
 │   ├── components/
 │   │   ├── CircularTimer.tsx        ← SVG countdown ring
@@ -110,18 +116,45 @@ eapcet-physics-platform/
 
 ---
 
+## 📚 Where to Keep Course Content Files
+
+1. **Course Learning Materials (Theory, Formulas, Notes, Roadmaps)**:
+   Keep them in:
+   ```
+   public/courses/<chapter-name>/
+   ```
+   Example:
+   ```
+   public/courses/work-energy-power/work-energy-power-theory-notes.pdf
+   public/courses/work-energy-power/formula-sheet.pdf
+   ```
+   Any file placed here will automatically be available to users at:
+   `https://<your-username>.github.io/eapcet-physics-platform/courses/<chapter-name>/<file>`
+
+2. **MCQ Practice PDFs (Practice Questions, Test Papers, Answer Keys)**:
+   Keep them in:
+   ```
+   public/mcqs/
+   ```
+   Example:
+   ```
+   public/mcqs/work-energy-power-mcq-practice.pdf
+   ```
+
+---
+
 ## ➕ Adding More Question Banks (Future Chapters)
 
 To add a new chapter:
 
-1. **Place the PDF** in `public/`:
+1. **Place the MCQ PDF** in `public/mcqs/`:
    ```
-   public/laws-of-motion-mcq-practice.pdf
+   public/mcqs/laws-of-motion-mcq-practice.pdf
    ```
 
-2. **Extract questions** from the PDF using the extraction script:
-   ```bash
-   python scripts/extract_pdf.py  # (adapt path/filename)
+2. **Place the Course Theory Notes** in `public/courses/`:
+   ```
+   public/courses/laws-of-motion/theory-notes.pdf
    ```
 
 3. **Create a JSON question bank** at:

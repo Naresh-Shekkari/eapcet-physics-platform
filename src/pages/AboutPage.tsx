@@ -85,7 +85,7 @@ export function AboutPage() {
             <span className="text-slate-300">Work, Energy and Power</span>
             <span className="badge bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">20 questions</span>
           </div>
-          <div className="text-xs text-slate-500">Source: work-energy-power-mcq-practice.pdf</div>
+          <div className="text-xs text-slate-500">Source: public/mcqs/work-energy-power-mcq-practice.pdf</div>
         </div>
         <p className="text-xs text-slate-500 mt-2">
           More chapters will be added as teacher-verified PDFs become available.

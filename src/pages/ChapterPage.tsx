@@ -30,8 +30,9 @@ export function ChapterPage() {
     if (examAvailable) navigate('/quiz?mode=exam');
   };
 
-  // Base URL-aware PDF path — works locally and on GitHub Pages
-  const pdfUrl = `${import.meta.env.BASE_URL}work-energy-power-mcq-practice.pdf`;
+  // Dedicated paths for MCQ PDFs and Course Learning Materials
+  const mcqPdfUrl = `${import.meta.env.BASE_URL}mcqs/work-energy-power-mcq-practice.pdf`;
+  const courseNotesUrl = `${import.meta.env.BASE_URL}courses/work-energy-power/work-energy-power-complete-guide.md`;
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 space-y-8">
@@ -188,25 +189,54 @@ export function ChapterPage() {
         </div>
       </div>
 
-      {/* Source PDF */}
-      <div className="card p-5 space-y-3">
-        <div className="flex items-center gap-2">
-          <FileText size={16} className="text-indigo-400" />
-          <h3 className="font-semibold text-white">Source Material</h3>
+      {/* Learning Resources & Documents */}
+      <div className="space-y-4">
+        <h2 className="section-heading">Study Materials & Documents</h2>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {/* Course Content / Theory Notes */}
+          <div className="card p-5 space-y-3">
+            <div className="flex items-center gap-2">
+              <BookOpen size={18} className="text-violet-400" />
+              <h3 className="font-semibold text-white">Course Learning Guide</h3>
+            </div>
+            <p className="text-sm text-slate-400">
+              Read the complete chapter theory notes, core concepts, formulas, and special cases before attempting quizzes.
+            </p>
+            <div className="pt-2">
+              <a
+                href={courseNotesUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary inline-flex text-sm w-full justify-center"
+              >
+                <BookOpen size={14} /> Open Course Study Guide
+                <ExternalLink size={12} className="ml-1 opacity-60" />
+              </a>
+            </div>
+          </div>
+
+          {/* MCQ Practice PDF */}
+          <div className="card p-5 space-y-3">
+            <div className="flex items-center gap-2">
+              <FileText size={18} className="text-indigo-400" />
+              <h3 className="font-semibold text-white">MCQ Practice Paper</h3>
+            </div>
+            <p className="text-sm text-slate-400">
+              The original 20-MCQ practice set with official answer keys and step-by-step verified explanations.
+            </p>
+            <div className="pt-2">
+              <a
+                href={mcqPdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary inline-flex text-sm w-full justify-center"
+              >
+                <FileText size={14} /> Open MCQ Practice PDF
+                <ExternalLink size={12} className="ml-1 opacity-60" />
+              </a>
+            </div>
+          </div>
         </div>
-        <p className="text-sm text-slate-400">
-          All questions are extracted and verified from the following practice PDF.
-          Open it to cross-reference explanations or report discrepancies.
-        </p>
-        <a
-          href={pdfUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-secondary inline-flex text-sm"
-        >
-          <FileText size={14} /> Open Practice PDF
-          <ExternalLink size={12} className="ml-1 opacity-60" />
-        </a>
       </div>
     </div>
   );

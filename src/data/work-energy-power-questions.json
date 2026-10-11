@@ -1,7 +1,7 @@
 {
   "chapter": "Work, Energy and Power",
   "subject": "Physics",
-  "source_pdf": "work-energy-power-mcq-practice.pdf",
+  "source_pdf": "mcqs/work-energy-power-mcq-practice.pdf",
   "total_questions": 20,
   "verified": true,
   "verification_notes": [
@@ -35,7 +35,7 @@
       "correct_option_id": "D",
       "explanation": "Compute the dot product: P · Q = (5)(2) + (2)(−5) + (4)(0) = 10 − 10 + 0 = 0. Since the dot product is zero, cos θ = 0, giving θ = 90°.",
       "formula": "P · Q = |P||Q| cos θ",
-      "source_pdf": "work-energy-power-mcq-practice.pdf",
+      "source_pdf": "mcqs/work-energy-power-mcq-practice.pdf",
       "source_page": 1,
       "diagram_ref": null
     },
@@ -54,7 +54,7 @@
       "correct_option_id": "B",
       "explanation": "Checking option (B): Dot product (î + 2ĵ) · (6î − 3ĵ) = (1)(6) + (2)(−3) = 0. Magnitude = √(6² + (−3)²) = √45 = 3√5 units.",
       "formula": "Two vectors A and B are perpendicular if A · B = 0",
-      "source_pdf": "work-energy-power-mcq-practice.pdf",
+      "source_pdf": "mcqs/work-energy-power-mcq-practice.pdf",
       "source_page": 1,
       "diagram_ref": null
     },
@@ -73,7 +73,7 @@
       "correct_option_id": "B",
       "explanation": "Component of A along B is A cos θ; component of B along A is B cos θ. Given A cos θ = √3 (B cos θ), cancelling cos θ gives A/B = √3/1.",
       "formula": "Component of A along B = A cos θ",
-      "source_pdf": "work-energy-power-mcq-practice.pdf",
+      "source_pdf": "mcqs/work-energy-power-mcq-practice.pdf",
       "source_page": 1,
       "diagram_ref": null,
       "manual_review": true,
@@ -94,7 +94,7 @@
       "correct_option_id": "A",
       "explanation": "Since A and B are unit vectors, |A|=|B|=1 and A·B = cos θ. |A−B|² = 1 − 2cos θ + 1 = 2(1 − cos θ). |A+B|² = 2(1 + cos θ). Using half-angle identities: (1 − cos θ)/(1 + cos θ) = [2 sin²(θ/2)] / [2 cos²(θ/2)] = tan²(θ/2).",
       "formula": "|A − B|² = |A|² − 2A·B + |B|²",
-      "source_pdf": "work-energy-power-mcq-practice.pdf",
+      "source_pdf": "mcqs/work-energy-power-mcq-practice.pdf",
       "source_page": 1,
       "diagram_ref": null,
       "manual_review": true,
@@ -115,7 +115,7 @@
       "correct_option_id": "D",
       "explanation": "Total work done = Potential Energy gain + Kinetic Energy gain = mgh + ½mv² = 10(9.8)(10) + ½(10)(2²) = 980 + 20 = 1000 J.",
       "formula": "W = mgh + ½mv²",
-      "source_pdf": "work-energy-power-mcq-practice.pdf",
+      "source_pdf": "mcqs/work-energy-power-mcq-practice.pdf",
       "source_page": 1,
       "diagram_ref": null
     },
@@ -134,7 +134,7 @@
       "correct_option_id": "C",
       "explanation": "Rope mass = 0.2 × 20 = 4 kg. Total work = Work on bucket + Work on rope center of gravity = m_bucket × g × h + m_rope × g × (h/2) = 20(10)(20) + 4(10)(10) = 4000 + 400 = 4400 J.",
       "formula": "W = m_bucket·g·h + m_rope·g·(h/2)",
-      "source_pdf": "work-energy-power-mcq-practice.pdf",
+      "source_pdf": "mcqs/work-energy-power-mcq-practice.pdf",
       "source_page": 1,
       "diagram_ref": null
     },
@@ -153,7 +153,7 @@
       "correct_option_id": "B",
       "explanation": "Hanging length = 0.6 m, total length = 2 m. Hanging fraction = 0.6/2 = 3/10. Mass of hanging part = 4 × (3/10) = 1.2 kg. Center of gravity of hanging part is at 0.3 m below edge. Work W = m_hang × g × (L_hang/2) = 1.2 × 10 × 0.3 = 3.6 J.",
       "formula": "W = (m × L_hang/L_total) × g × (L_hang/2)",
-      "source_pdf": "work-energy-power-mcq-practice.pdf",
+      "source_pdf": "mcqs/work-energy-power-mcq-practice.pdf",
       "source_page": 2,
       "diagram_ref": null,
       "manual_review": true,
@@ -174,7 +174,7 @@
       "correct_option_id": "B",
       "explanation": "Volume V = 6×4×2 = 48 m³, mass m = 48 × 1500 = 72,000 kg. Initial CG height h₁ = 2/2 = 1 m (smallest dimension/2); final CG height h₂ = 6/2 = 3 m (largest dimension/2). W = mg(h₂ − h₁) = 72000 × 10 × (3 − 1) = 1,440,000 J = 1440 kJ.",
       "formula": "W = mg(h_final − h_initial)",
-      "source_pdf": "work-energy-power-mcq-practice.pdf",
+      "source_pdf": "mcqs/work-energy-power-mcq-practice.pdf",
       "source_page": 2,
       "diagram_ref": null
     },
@@ -193,7 +193,7 @@
       "correct_option_id": "D",
       "explanation": "Acceleration a = F/m = 10/5 = 2 m/s². Time t = (v − u)/a = (8 − 4)/2 = 2 s. Displacement s = (v² − u²)/(2a) = (64 − 16)/4 = 12 m. Work W = F × s = 10 × 12 = 120 J. All statements are true.",
       "formula": "a = F/m; t = (v−u)/a; s = (v²−u²)/(2a); W = F·s",
-      "source_pdf": "work-energy-power-mcq-practice.pdf",
+      "source_pdf": "mcqs/work-energy-power-mcq-practice.pdf",
       "source_page": 2,
       "diagram_ref": null
     },
@@ -212,7 +212,7 @@
       "correct_option_id": "A",
       "explanation": "Height gained by center of gravity h = (L/2) sin 30° = 1 × 0.5 = 0.5 m. Work done W = mgh = 5 × 10 × 0.5 = 25 J.",
       "formula": "W = mg(L/2)sin θ",
-      "source_pdf": "work-energy-power-mcq-practice.pdf",
+      "source_pdf": "mcqs/work-energy-power-mcq-practice.pdf",
       "source_page": 2,
       "diagram_ref": null
     },
@@ -231,7 +231,7 @@
       "correct_option_id": "A",
       "explanation": "W = ∫₂³ (4x² + 3x) dx = [(4/3)x³ + (3/2)x²]₂³ = [(4/3)(27) + (3/2)(9)] − [(4/3)(8) + (3/2)(4)] = [36 + 13.5] − [10.67 + 6] = 49.5 − 16.67 = 32.83 J ≈ 32.8 J.",
       "formula": "W = ∫ F(x) dx",
-      "source_pdf": "work-energy-power-mcq-practice.pdf",
+      "source_pdf": "mcqs/work-energy-power-mcq-practice.pdf",
       "source_page": 2,
       "diagram_ref": null,
       "manual_review": true,
@@ -252,7 +252,7 @@
       "correct_option_id": "A",
       "explanation": "Acceleration a = F/m = 5/20 = 0.25 m/s². Distance in 3rd second: S₃ = u + a(2n−1)/2 = 0 + 0.25(2×3−1)/2 = 0.25 × 5/2 = 5/8 m. Work W = F × S₃ = 5 × (5/8) = 25/8 J.",
       "formula": "S_n = u + a(2n−1)/2; W = F·S_n",
-      "source_pdf": "work-energy-power-mcq-practice.pdf",
+      "source_pdf": "mcqs/work-energy-power-mcq-practice.pdf",
       "source_page": 2,
       "diagram_ref": null
     },
@@ -271,7 +271,7 @@
       "correct_option_id": "D",
       "explanation": "Spring constant k = F/x = 10 / (1×10⁻³) = 10,000 N/m. Work W = ½kx² = ½ × 10,000 × (40×10⁻³)² = ½ × 10,000 × 1.6×10⁻³ = 8 J.",
       "formula": "k = F/x; W = ½kx²",
-      "source_pdf": "work-energy-power-mcq-practice.pdf",
+      "source_pdf": "mcqs/work-energy-power-mcq-practice.pdf",
       "source_page": 2,
       "diagram_ref": null
     },
@@ -290,7 +290,7 @@
       "correct_option_id": "D",
       "explanation": "W = ∫₀⁵ (7 − 2x + 3x²) dx = [7x − x² + x³]₀⁵ = 35 − 25 + 125 = 135 J.",
       "formula": "W = ∫₀⁵ F(x) dx",
-      "source_pdf": "work-energy-power-mcq-practice.pdf",
+      "source_pdf": "mcqs/work-energy-power-mcq-practice.pdf",
       "source_page": 3,
       "diagram_ref": null
     },
@@ -309,7 +309,7 @@
       "correct_option_id": "D",
       "explanation": "Apparent weight = mg(1 − ρ_water/ρ_body) = 20 × 10 × (1 − 1/3.2) = 200 × (2.2/3.2) = 200 × 0.6875 = 137.5 N. Work = Apparent weight × height = 137.5 × 8 = 1100 J.",
       "formula": "F_apparent = mg(1 − ρ_liquid/ρ_body); W = F_apparent × h",
-      "source_pdf": "work-energy-power-mcq-practice.pdf",
+      "source_pdf": "mcqs/work-energy-power-mcq-practice.pdf",
       "source_page": 3,
       "diagram_ref": null
     },
@@ -328,7 +328,7 @@
       "correct_option_id": "D",
       "explanation": "Given S = t²/3, velocity v = dS/dt = 2t/3. At t = 0, v₀ = 0; at t = 2, v = 4/3 m/s. By Work-Energy Theorem: W = ½m(v² − u²) = ½(3)((4/3)² − 0) = ½ × 3 × 16/9 = 8/3 J ≈ 2.67 J. NOTE: The PDF solution gives W = ½(3)(4²) = 24 J using v = t² at t=2, which differs from the displacement formula given. This is a discrepancy in the source PDF.",
       "formula": "v = dS/dt; W = ½m(v² − u²)",
-      "source_pdf": "work-energy-power-mcq-practice.pdf",
+      "source_pdf": "mcqs/work-energy-power-mcq-practice.pdf",
       "source_page": 3,
       "diagram_ref": null,
       "manual_review": true,
@@ -349,7 +349,7 @@
       "correct_option_id": "C",
       "explanation": "Mass ratio m₁/m₂ = (ρ₁/ρ₂) × (r₁/r₂)³ = (3/2) × (1/2)³ = (3/2) × (1/8) = 3/16. KE ratio = (m₁/m₂)(v₁/v₂)² = (3/16)(3/4)² = (3/16)(9/16) = 27/256.",
       "formula": "KE = ½mv²; m = ρ × (4/3)πr³",
-      "source_pdf": "work-energy-power-mcq-practice.pdf",
+      "source_pdf": "mcqs/work-energy-power-mcq-practice.pdf",
       "source_page": 3,
       "diagram_ref": null
     },
@@ -368,7 +368,7 @@
       "correct_option_id": "D",
       "explanation": "U₁ = ½k(3)² = 9(½k) = U, so ½k = U/9. For total compression 6 cm: U₂ = ½k(6)² = 36(½k) = 36(U/9) = 4U. Increase ΔU = U₂ − U₁ = 4U − U = 3U.",
       "formula": "U = ½kx²",
-      "source_pdf": "work-energy-power-mcq-practice.pdf",
+      "source_pdf": "mcqs/work-energy-power-mcq-practice.pdf",
       "source_page": 3,
       "diagram_ref": null
     },
@@ -387,7 +387,7 @@
       "correct_option_id": "A",
       "explanation": "New KE = 2.25 × old KE. Since p = √(2mKE), momentum ratio p₂/p₁ = √(KE₂/KE₁) = √2.25 = 1.5. Percentage increase = (1.5 − 1) × 100% = 50%.",
       "formula": "p = √(2mKE); percentage increase = (p₂/p₁ − 1) × 100%",
-      "source_pdf": "work-energy-power-mcq-practice.pdf",
+      "source_pdf": "mcqs/work-energy-power-mcq-practice.pdf",
       "source_page": 3,
       "diagram_ref": null
     },
@@ -406,7 +406,7 @@
       "correct_option_id": "B",
       "explanation": "Remaining mass m' = (3/4)m, new velocity v' = 2v. New KE K' = ½ × (3/4)m × (2v)² = ½ × (3/4)m × 4v² = (3/4)(4) × (½mv²) = 3K.",
       "formula": "KE = ½mv²",
-      "source_pdf": "work-energy-power-mcq-practice.pdf",
+      "source_pdf": "mcqs/work-energy-power-mcq-practice.pdf",
       "source_page": 3,
       "diagram_ref": null
     }
