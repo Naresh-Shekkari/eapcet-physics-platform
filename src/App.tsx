@@ -6,6 +6,7 @@ import { CoursesPage } from './pages/CoursesPage';
 import { ChapterPage } from './pages/ChapterPage';
 import { QuizPage } from './pages/QuizPage';
 import { ResultsPage } from './pages/ResultsPage';
+import { QuizReviewPage } from './pages/QuizReviewPage';
 import { AboutPage } from './pages/AboutPage';
 
 // Loading fallback
@@ -46,6 +47,8 @@ export default function App() {
               <Route path="/courses/chapter/work-energy-power" element={<ChapterPage />} />
               <Route path="/quiz" element={<QuizPage />} />
               <Route path="/results" element={<ResultsPage />} />
+              <Route path="/results/review/:sessionId" element={<QuizReviewPage />} />
+              <Route path="/review/:sessionId" element={<QuizReviewPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

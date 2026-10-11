@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import type { QuizResult, Question, QuestionAttempt } from '../types/quiz';
+import { Link } from 'react-router-dom';
+import type { QuizResult } from '../types/quiz';
 import { CheckCircle, XCircle, MinusCircle, ChevronDown, ChevronUp, AlertTriangle, BookOpen } from 'lucide-react';
 import { formatDuration } from '../services/quizScoring';
 
@@ -98,11 +99,17 @@ export function ResultsSummary({ result, onRetry, onBack }: ResultsSummaryProps)
         </div>
 
         {/* Actions */}
-        <div className="flex gap-3 pt-2">
-          <button onClick={onBack} className="btn-secondary flex-1">
+        <div className="flex gap-3 pt-2 flex-wrap">
+          <button onClick={onBack} className="btn-secondary flex-1 min-w-[130px]">
             Back to Chapter
           </button>
-          <button onClick={onRetry} className="btn-primary flex-1">
+          <Link
+            to={`/results/review/${result.sessionId}`}
+            className="btn-secondary flex-1 min-w-[130px] bg-indigo-600/20 text-indigo-300 border-indigo-500/40 hover:bg-indigo-600 hover:text-white"
+          >
+            <BookOpen size={16} /> Detailed Review
+          </Link>
+          <button onClick={onRetry} className="btn-primary flex-1 min-w-[130px]">
             Try Again
           </button>
         </div>
