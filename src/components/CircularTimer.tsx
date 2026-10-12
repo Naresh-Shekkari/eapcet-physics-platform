@@ -1,6 +1,7 @@
+import React from 'react';
 
 // ============================================================
-// Circular Timer Component
+// Circular Timer Component — PhysicsEdge Exam Engine
 // ============================================================
 
 interface CircularTimerProps {
@@ -10,7 +11,12 @@ interface CircularTimerProps {
   strokeWidth?: number;
 }
 
-export function CircularTimer({ remainingMs, totalMs, size = 80, strokeWidth = 6 }: CircularTimerProps) {
+export function CircularTimer({
+  remainingMs,
+  totalMs,
+  size = 72,
+  strokeWidth = 5,
+}: CircularTimerProps) {
   const fraction = totalMs > 0 ? Math.max(0, Math.min(1, remainingMs / totalMs)) : 1;
   const remainingSeconds = Math.ceil(remainingMs / 1000);
 
@@ -18,30 +24,35 @@ export function CircularTimer({ remainingMs, totalMs, size = 80, strokeWidth = 6
   const circumference = 2 * Math.PI * radius;
   const dashOffset = circumference * (1 - fraction);
 
-  // Color states
+  // Warning thresholds
   const isWarning = remainingSeconds <= 15 && remainingSeconds > 5;
   const isUrgent = remainingSeconds <= 5;
 
-  let ringColor = '#6366f1'; // indigo - calm
-  let textColor = 'text-slate-300';
-  let bgColor = '#1e3a6e';
+  let ringColor = '#06b6d4'; // cyan - calm focus
+  let ringBg = '#0a1428';
+  let textColor = 'text-cyan-300';
+  let badgeColor = 'text-slate-400';
 
   if (isUrgent) {
-    ringColor = '#ef4444'; // red
-    textColor = 'text-red-400';
-    bgColor = '#3f1919';
+    ringColor = '#f43f5e'; // rose-500
+    ringBg = '#270c14';
+    textColor = 'text-rose-400';
+    badgeColor = 'text-rose-300';
   } else if (isWarning) {
-    ringColor = '#f59e0b'; // amber
+    ringColor = '#f59e0b'; // amber-500
+    ringBg = '#221508';
     textColor = 'text-amber-400';
-    bgColor = '#2d2010';
+    badgeColor = 'text-amber-300';
   }
 
   const center = size / 2;
-  const fontSize = size < 60 ? 11 : 14;
+  const fontSize = size < 60 ? 12 : 15;
 
   return (
     <div
-      className={`relative inline-flex items-center justify-center transition-colors duration-500 ${isUrgent ? 'animate-pulse' : ''}`}
+      className={`relative inline-flex items-center justify-center transition-all duration-300 ${
+        isUrgent ? 'animate-pulse scale-105' : ''
+      }`}
       style={{ width: size, height: size }}
       role="timer"
       aria-label={`${remainingSeconds} seconds remaining`}
@@ -53,11 +64,11 @@ export function CircularTimer({ remainingMs, totalMs, size = 80, strokeWidth = 6
           cx={center}
           cy={center}
           r={radius}
-          fill={bgColor}
+          fill={ringBg}
           stroke="#1e293b"
           strokeWidth={strokeWidth}
         />
-        {/* Progress arc */}
+        {/* Animated countdown track */}
         <circle
           cx={center}
           cy={center}
@@ -68,18 +79,25 @@ export function CircularTimer({ remainingMs, totalMs, size = 80, strokeWidth = 6
           strokeLinecap="round"
           strokeDasharray={circumference}
           strokeDashoffset={dashOffset}
-          style={{ transition: 'stroke-dashoffset 0.25s linear, stroke 0.5s ease' }}
+          style={{
+            transition: 'stroke-dashoffset 0.25s linear, stroke 0.3s ease',
+          }}
         />
       </svg>
-      {/* Time text */}
-      <div className={`absolute inset-0 flex flex-col items-center justify-center`}>
+
+      {/* Numerical countdown display */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center select-none">
         <span
-          className={`font-bold tabular-nums transition-colors duration-500 ${textColor}`}
-          style={{ fontSize, lineHeight: 1 }}
+          className={`font-mono font-bold tabular-nums transition-colors duration-300 leading-none ${textColor}`}
+          style={{ fontSize }}
         >
           {remainingSeconds}
         </span>
-        <span className="text-slate-500 mt-0.5" style={{ fontSize: fontSize * 0.6 }}>sec</span>
+        <span
+          className={`font-mono uppercase text-[9px] tracking-wider mt-0.5 leading-none transition-colors duration-300 ${badgeColor}`}
+        >
+          sec
+        </span>
       </div>
     </div>
   );

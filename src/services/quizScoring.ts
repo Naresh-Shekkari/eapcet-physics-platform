@@ -1,4 +1,4 @@
-import type { QuizResult, QuizState, Question, QuestionAttempt, QuizSettings } from '../types/quiz';
+import type { QuizResult, Question, QuestionAttempt, QuizSettings } from '../types/quiz';
 
 // ============================================================
 // Quiz Scoring Service

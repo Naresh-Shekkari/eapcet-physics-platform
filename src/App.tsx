@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
+import { Footer } from './components/Footer';
 import { HomePage } from './pages/HomePage';
 import { CoursesPage } from './pages/CoursesPage';
 import { ChapterPage } from './pages/ChapterPage';
@@ -13,8 +14,8 @@ function PageLoading() {
   return (
     <div className="flex items-center justify-center min-h-[60vh]">
       <div className="flex flex-col items-center gap-3">
-        <div className="w-8 h-8 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin" />
-        <p className="text-sm text-slate-400">Loading...</p>
+        <div className="w-8 h-8 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin" />
+        <p className="text-sm font-mono text-slate-400">Loading module...</p>
       </div>
     </div>
   );
@@ -24,10 +25,10 @@ function PageLoading() {
 function NotFound() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4 text-center px-4">
-      <p className="text-6xl font-black text-slate-700">404</p>
-      <h1 className="text-2xl font-bold text-white">Page Not Found</h1>
-      <p className="text-slate-400">This page doesn't exist or has moved.</p>
-      <a href="#/" className="btn-primary">Go Home</a>
+      <p className="text-6xl font-black font-mono text-slate-700">404</p>
+      <h1 className="text-2xl font-bold text-white">Module Not Found</h1>
+      <p className="text-slate-400 text-sm">This page doesn't exist or has moved in the catalogue.</p>
+      <a href="#/" className="btn-primary text-xs py-2.5 px-5">Return to Home</a>
     </div>
   );
 }
@@ -36,7 +37,7 @@ export default function App() {
   return (
     // HashRouter for GitHub Pages compatibility (avoids 404 on direct navigation)
     <HashRouter>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen bg-navy-950 text-slate-100">
         <Navbar />
         <main className="flex-1">
           <Suspense fallback={<PageLoading />}>
@@ -51,12 +52,7 @@ export default function App() {
             </Routes>
           </Suspense>
         </main>
-
-        {/* Footer */}
-        <footer className="border-t border-slate-700/50 py-6 text-center text-sm text-slate-500 px-4">
-          <p>PhysicsEdge — EAPCET Physics Preparation Platform</p>
-          <p className="text-xs mt-1">All questions verified from official source PDFs. No content is fabricated.</p>
-        </footer>
+        <Footer />
       </div>
     </HashRouter>
   );

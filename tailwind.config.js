@@ -8,33 +8,40 @@ export default {
     extend: {
       colors: {
         navy: {
-          950: '#040d21',
-          900: '#0a1628',
-          800: '#0f2040',
-          700: '#162b55',
-          600: '#1e3a6e',
+          950: '#060a14',
+          900: '#0a1224',
+          850: '#0f1a33',
+          800: '#142242',
+          700: '#1c2e56',
+          600: '#273f73',
+          500: '#3b5a9b',
         },
-        indigo: {
-          950: '#1e1b4b',
+        slate: {
+          850: '#151f33',
+        },
+        cyan: {
+          450: '#14c3e8',
         },
         brand: {
-          primary: '#6366f1',   // indigo-500
-          secondary: '#8b5cf6', // violet-500
+          primary: '#3b82f6',   // blue-500
+          indigo: '#6366f1',    // indigo-500
+          violet: '#8b5cf6',    // violet-500
           accent: '#06b6d4',    // cyan-500
-          teal: '#14b8a6',      // teal-500
+          electric: '#38bdf8',  // sky-400
           success: '#10b981',   // emerald-500
           warning: '#f59e0b',   // amber-500
           danger: '#ef4444',    // red-500
         }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Fira Code', 'Consolas', 'monospace'],
       },
       animation: {
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'fade-in': 'fadeIn 0.3s ease-out',
-        'slide-up': 'slideUp 0.3s ease-out',
+        'fade-in': 'fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+        'slide-up': 'slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+        'marquee': 'marquee 30s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -42,8 +49,12 @@ export default {
           '100%': { opacity: '1' },
         },
         slideUp: {
-          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '0%': { opacity: '0', transform: 'translateY(12px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
       },
     },

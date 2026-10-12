@@ -1,4 +1,4 @@
-import { useReducer, useEffect, useRef, useCallback } from 'react';
+import { useReducer, useEffect, useRef, useCallback, useState } from 'react';
 import type { QuizState, QuizSettings, QuestionAttempt, Question, QuizResult } from '../types/quiz';
 import { scoreQuiz } from '../services/quizScoring';
 import { saveActiveQuiz, clearActiveQuiz, saveResult } from '../services/quizPersistence';
@@ -263,7 +263,7 @@ interface UseQuizEngineReturn {
 
 export function useQuizEngine(): UseQuizEngineReturn {
   const [state, dispatch] = useReducer(reducer, IDLE_STATE);
-  const resultRef = useRef<QuizResult | null>(null);
+  const [result, setResult] = useState<QuizResult | null>(null);
 
   // Ticker ref — we use setInterval + timestamp comparison for reliability
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -286,13 +286,13 @@ export function useQuizEngine(): UseQuizEngineReturn {
 
   // Compute and save result when phase becomes submitted
   useEffect(() => {
-    if (state.phase === 'submitted' && !resultRef.current && state.questions.length > 0) {
-      const result = scoreQuiz(state.questions, state.attempts, state.settings, state.quizStartMs);
-      resultRef.current = result;
-      saveResult(result);
+    if (state.phase === 'submitted' && !result && state.questions.length > 0) {
+      const computedResult = scoreQuiz(state.questions, state.attempts, state.settings, state.quizStartMs);
+      setResult(computedResult);
+      saveResult(computedResult);
       clearActiveQuiz();
     }
-  }, [state.phase]);
+  }, [state.phase, state.questions, state.attempts, state.settings, state.quizStartMs, result]);
 
   // Auto-advance and auto-submit timer
   useEffect(() => {
@@ -334,7 +334,7 @@ export function useQuizEngine(): UseQuizEngineReturn {
   }, [state]);
 
   const startQuiz = useCallback((questions: Question[], settings: QuizSettings) => {
-    resultRef.current = null;
+    setResult(null);
     dispatch({ type: 'START_QUIZ', questions, settings, now: Date.now() });
   }, []);
 
@@ -363,14 +363,14 @@ export function useQuizEngine(): UseQuizEngineReturn {
   }, []);
 
   const resetQuiz = useCallback(() => {
-    resultRef.current = null;
+    setResult(null);
     clearActiveQuiz();
     dispatch({ type: 'RESET' });
   }, []);
 
   return {
     state,
-    result: resultRef.current,
+    result,
     startQuiz,
     selectAnswer,
     toggleMark,
