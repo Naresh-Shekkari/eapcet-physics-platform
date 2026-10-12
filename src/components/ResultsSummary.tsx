@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import type { QuizResult } from '../types/quiz';
 import {
   CheckCircle2,
@@ -11,6 +12,7 @@ import {
   Clock,
   Target,
   Sparkles,
+  BookOpen,
 } from 'lucide-react';
 import { formatDuration } from '../services/quizScoring';
 import { FormulaBlock } from './MathText';
@@ -231,6 +233,13 @@ export function ResultsSummary({ result, onRetry, onBack }: ResultsSummaryProps)
             >
               Back to Chapter
             </button>
+            <Link
+              to={`/results/review/${result.sessionId}`}
+              className="btn-secondary w-full sm:w-auto px-5 py-2.5 text-sm gap-2 border-indigo-500/40 text-indigo-300 hover:bg-indigo-600/20 hover:text-white inline-flex items-center justify-center"
+            >
+              <BookOpen size={15} />
+              <span>Detailed Review & Explanations</span>
+            </Link>
             <button
               onClick={onRetry}
               type="button"

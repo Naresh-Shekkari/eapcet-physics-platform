@@ -13,6 +13,7 @@ import {
   Target,
   Award,
   ChevronLeft,
+  BookOpen,
 } from 'lucide-react';
 import {
   loadResultsList,
@@ -244,16 +245,29 @@ export function ResultsPage() {
                 </div>
               </div>
 
-              {/* Action Buttons */}
-              <div className="flex items-center gap-3 w-full sm:w-auto justify-end border-t sm:border-t-0 border-slate-800 pt-3 sm:pt-0">
+              {/* Score and Review Actions */}
+              <div className="flex items-center gap-3 w-full sm:w-auto justify-end border-t sm:border-t-0 border-slate-800 pt-3 sm:pt-0 flex-wrap sm:flex-nowrap">
+                <div className="text-right hidden sm:block pr-1 font-mono">
+                  <p className="text-sm font-bold text-white">{r.score}/{r.maxScore}</p>
+                  <p className="text-[10px] text-slate-500">marks</p>
+                </div>
                 <button
                   onClick={() => handleInspectAttempt(r.id)}
                   type="button"
-                  className="btn-primary py-2 px-3.5 text-xs font-mono gap-1.5 w-full sm:w-auto justify-center"
+                  className="btn-secondary py-2 px-3 text-xs font-mono gap-1.5 flex-1 sm:flex-initial justify-center"
+                  aria-label="Quick overview of this attempt"
                 >
-                  <span>Review Answers</span>
-                  <ArrowRight size={13} />
+                  <span>Quick View</span>
                 </button>
+                <Link
+                  to={`/results/review/${r.id}`}
+                  className="btn-primary py-2 px-3.5 text-xs font-mono gap-1.5 flex-1 sm:flex-initial justify-center inline-flex items-center"
+                  aria-label={`Detailed review for quiz attempt from ${new Date(r.completedAt).toLocaleDateString()}`}
+                >
+                  <BookOpen size={13} />
+                  <span>Review Quiz</span>
+                  <ArrowRight size={13} />
+                </Link>
               </div>
             </div>
           );
